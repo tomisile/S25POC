@@ -1,23 +1,24 @@
 import streamlit as st
 import utils
 
-st.title("Session 25")
-st.caption("beta 0.1.0")
+st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
-prompt1 = st.text_input('Enter Spreadsheet Link')
-prompt2 = st.text_input('Enter Sheet Name')
+with st.container():
+    col1, col2 = st.columns(2)
+    with col1:
+        st.title('Small Daily Actions, Big Change: Unleash the Power of Time and Money Tracking.')
 
-if prompt1 and prompt2:
-    data = utils.load_data(prompt1, prompt2)
-
-    if st.toggle('View data'):
-        st.write(data)
+        st.caption('Harnessing the power of Artificial Intelligence, we provide you with valuable '
+                'insights into your spending habits and time allocation, empowering you to make '
+                'informed decisions and prioritize your resources wisely.')
+        st.link_button('Try now', url='www.googl.com')
     
-    st.divider()
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Recorded Sessions", "87/234", "14")
-    col2.metric("Time Tracked", "925 minutes", "-8%")
-    col3.metric("Productivity Score", "66%", "4%")
-
-    if st.button('More Insights'):
-        st.info('Redirecting you to your analytics dashboard')
+    with col2:
+        mini_col1, mini_col2, mini_col3 = st.columns(3)
+        with mini_col1:
+            st.write('')
+        with mini_col2:
+            st.image('https://www.svgrepo.com/show/418517/analytics-chart-growth.svg', width=300)
+        with mini_col3:
+            st.write('')
+        
